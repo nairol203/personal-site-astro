@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+@theme {
+	--color-*: initial;
+	--color-text: #110a29;
+	--color-background: #e4def7;
+	--color-primary: #4a2db4;
+	--color-secondary: #d5ccf0;
+	--color-accent: #694bd2;
+
+	--color-dark-text: #e4def7;
+	--color-dark-background: #110a29;
+	--color-dark-primary: #4528a4;
+	--color-dark-secondary: #1b1146;
+	--color-dark-accent: #694bd2;
+}
+
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentColor);
+	}
+}
+
+@layer base {
+	:root {
+		color-scheme: light dark;
+	}
+
+	body {
+		@apply bg-background dark:bg-dark-background text-text dark:text-dark-text;
+	}
+
+	h1,
+	.h1 {
+		@apply font-sans text-2xl font-bold;
+	}
+
+	h2,
+	.h2 {
+		@apply font-sans text-xl font-bold;
+	}
+
+	h3,
+	.h3 {
+		@apply font-sans text-lg font-bold;
+	}
+
+	h4,
+	.h4 {
+		@apply font-sans text-base font-bold;
+	}
+}

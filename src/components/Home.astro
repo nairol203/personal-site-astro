@@ -1,0 +1,127 @@
+---
+import { Image } from 'astro:assets';
+import discordLogo from '../assets/logos/socials/discord.svg';
+import githubLogo from '../assets/logos/socials/github.svg';
+import mastodonLogo from '../assets/logos/socials/mastodon.svg';
+import typescriptLogo from '../assets/logos/typescript.svg';
+import nextjsLogo from '../assets/logos/nextjs.svg';
+import tailwindLogo from '../assets/logos/tailwind.svg';
+import drizzleLogo from '../assets/logos/drizzle.svg';
+import { projects } from '../lib/projects';
+import ProjectCard from './ProjectCard.astro';
+---
+
+<main class='max-w-7xl mx-auto min-h-screen'>
+	<div class='grid gap-10 xl:gap-12 2xl:gap-16 mx-4 mt-6'>
+		<header class='grid sm:flex sm:justify-between gap-4 md:gap-6 lg:gap-8 bg-secondary dark:bg-dark-secondary p-6 md:p-8 rounded-3xl'>
+			<div class='flex flex-col gap-4 justify-center'>
+				<h1 class='text-5xl sm:text-6xl md:text-7xl xl:text-8xl mt-2'>
+					Welcome.
+					<br />
+					I&apos;m Florian.
+				</h1>
+				<p class='text-xl md:text-2xl'>IT specialist and Hobby Developer.</p>
+			</div>
+			<div class='flex sm:flex-col gap-4 justify-end items-end'>
+				<a
+					class='flex items-center justify-center p-2.5 rounded-full md:hover:bg-accent dark:md:hover:bg-dark-accent transition-colors duration-200'
+					href='https://discord.com/users/255739211112513536'
+					target='_blank'
+					rel='noreferrer'
+				>
+					<Image src={discordLogo} width={24} height={24} alt='Discord Logo' class='dark:invert' />
+				</a>
+				<a
+					class='flex items-center justify-center p-2.5 rounded-full md:hover:bg-accent dark:md:hover:bg-dark-accent transition-colors duration-200'
+					href='https://mastodon.social/@nairol203'
+					rel='me'
+				>
+					<Image src={mastodonLogo} width={24} height={24} alt='Mastodon Logo' class='dark:invert' />
+				</a>
+				<a
+					class='flex items-center justify-center p-2.5 rounded-full md:hover:bg-accent dark:md:hover:bg-dark-accent transition-colors duration-200'
+					href='https://github.com/nairol203'
+					target='_blank'
+					rel='noreferrer'
+				>
+					<Image src={githubLogo} width={24} height={24} alt='Github Logo' class='dark:invert' />
+				</a>
+			</div>
+		</header>
+		<section class='grid gap-6'>
+			<h2 class='text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl'>My Stack.</h2>
+			<div class='grid grid-cols-2 sm:flex gap-2 flex-wrap'>
+				<a
+					class='flex justify-between items-center gap-4 bg-secondary dark:bg-dark-secondary py-2 px-4 md:py-4 md:px-6 rounded-full shadow md:hover:bg-accent dark:md:hover:bg-dark-accent md:hover:text-dark-text transition-colors duration-200'
+					href='https://www.typescriptlang.org/'
+					target='_blank'
+					rel='noreferrer'
+				>
+					<h3 class='text-xl overflow-hidden text-ellipsis whitespace-nowrap'>Typescript</h3>
+					<Image src={typescriptLogo} width={64} height={64} alt='Typescript Logo' class='rounded w-10 h-10 sm:w-16 sm:h-16' />
+				</a>
+				<a
+					class='flex justify-between items-center gap-4 bg-secondary dark:bg-dark-secondary py-2 px-4 md:py-4 md:px-6 rounded-full shadow md:hover:bg-accent dark:md:hover:bg-dark-accent md:hover:text-dark-text transition-colors duration-200'
+					href='https://nextjs.org/'
+					target='_blank'
+					rel='noreferrer'
+				>
+					<h3 class='text-xl overflow-hidden text-ellipsis whitespace-nowrap'>Next.js</h3>
+					<Image src={nextjsLogo} width={64} height={64} alt='Next.js Logo' class='rounded w-10 h-10 sm:w-16 sm:h-16' />
+				</a>
+				<a
+					class='flex justify-between items-center gap-4 bg-secondary dark:bg-dark-secondary py-2 px-4 md:py-4 md:px-6 rounded-full shadow md:hover:bg-accent dark:md:hover:bg-dark-accent md:hover:text-dark-text transition-colors duration-200'
+					href='https://tailwindcss.com/'
+					target='_blank'
+					rel='noreferrer'
+				>
+					<h3 class='text-xl overflow-hidden text-ellipsis whitespace-nowrap'>Tailwind CSS</h3>
+					<Image src={tailwindLogo} width={64} height={64} alt='Tailwind CSS Logo' class='rounded w-10 h-10 sm:w-16 sm:h-16' />
+				</a>
+				<a
+					class='flex justify-between items-center gap-4 bg-secondary dark:bg-dark-secondary py-2 px-4 md:py-4 md:px-6 rounded-full shadow md:hover:bg-accent dark:md:hover:bg-dark-accent md:hover:text-dark-text transition-colors duration-200'
+					href='https://orm.drizzle.team/'
+					target='_blank'
+					rel='noreferrer'
+				>
+					<h3 class='text-xl overflow-hidden text-ellipsis whitespace-nowrap'>DrizzleORM</h3>
+					<Image src={drizzleLogo} width={64} height={64} alt='DrizzleORM Logo' class='rounded w-10 h-10 sm:w-16 sm:h-16' />
+				</a>
+			</div>
+		</section>
+		<section class='grid gap-3 md:gap-6' id='projects'>
+			<h2 class='text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl'>My Projects.</h2>
+			<div class='grid md:grid-cols-2 lg:grid-cols-3 gap-2'>
+				{projects.map(project => <ProjectCard data={project} />)}
+			</div>
+		</section>
+		<section class='grid justify-center gap-8 mt-10 mb-20'>
+			<h2 class='text-5xl sm:text-6xl text-center'>My Socials.</h2>
+			<div class='flex justify-center gap-4'>
+				<a
+					class='flex items-center justify-center p-2.5 rounded-full md:hover:bg-accent dark:md:hover:bg-dark-accent transition-colors duration-200'
+					href='https://discord.com/users/255739211112513536'
+					target='_blank'
+					rel='noreferrer'
+				>
+					<Image src={discordLogo} width={30} height={30} alt='Discord Logo' class='dark:invert' />
+				</a>
+				<a
+					class='flex items-center justify-center p-2.5 rounded-full md:hover:bg-accent dark:md:hover:bg-dark-accent transition-colors duration-200'
+					href='https://mastodon.social/@nairol203'
+					rel='me'
+				>
+					<Image src={mastodonLogo} width={30} height={30} alt='Mastodon Logo' class='dark:invert' />
+				</a>
+				<a
+					class='flex items-center justify-center p-2.5 rounded-full md:hover:bg-accent dark:md:hover:bg-dark-accent transition-colors duration-200'
+					href='https://github.com/nairol203'
+					target='_blank'
+					rel='noreferrer'
+				>
+					<Image src={githubLogo} width={30} height={30} alt='Github Logo' class='dark:invert' />
+				</a>
+			</div>
+		</section>
+	</div>
+</main>
