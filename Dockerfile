@@ -1,4 +1,4 @@
-FROM docker.io/node:22-alpine@sha256:01393fe5a51489b63da0ab51aa8e0a7ff9990132917cf20cfc3d46f5e36c0e48 AS build
+FROM docker.io/node:22-alpine@sha256:5ef237d055ac3c076f47eda1310f2214eb23c30a53aecdc20c35fd17780fa4ee AS build
 WORKDIR /app
 COPY . .
 RUN npm i
