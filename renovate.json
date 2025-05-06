@@ -3,6 +3,7 @@
   "extends": [
     "config:recommended"
   ],
+  "assignees": ["nairol203"],
   "packageRules": [
     {
       "matchManagers": ["npm"],
