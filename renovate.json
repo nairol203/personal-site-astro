@@ -3,4 +3,5 @@
   "extends": [
     "github>nairol203/renovate-config",
     "security:only-security-updates"
+  ]
 }
